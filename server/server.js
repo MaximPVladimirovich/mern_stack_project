@@ -9,8 +9,7 @@ const cwd = process.cwd();
 
 app.use("/dist", express.static(path.join(cwd, "dist")));
 
-const url =
-  "mongodb+srv://abc1234:abc1234@mern.ohnth2f.mongodb.net/?retryWrites=true&w=majority";
+const url = process.env.MONGODB_URL;
 
 MongoClient.connect(url, (err, client) => {
   if (err) {
